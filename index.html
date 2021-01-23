@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP API REST Test</title>
+    <style>
+        html,
+        body {
+            font-family: monospace;
+            font-size: 16px;
+            background: rgb(224, 224, 224);
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .wrap {
+            display: table;
+            margin: auto;
+            background: rgb(255, 255, 255);
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrap">
+
+        <h1>PHP API REST Test</h1>
+
+        <h2>API "Lista de tarefas"</h2>
+
+        <blockquote><em>Dica: use o <a href="https://www.postman.com/" target="_blank">POSTMAN</a> para testar a API e
+                verificar as respostas!</em></blockquote>
+
+        <hr>
+
+        <h3>Adicionando uma tarefa:</h3>
+        <ul>
+            <li><strong>URL da requisição:</strong> http://phpapi.localhost/api/</li>
+            <li><strong>Método da requisição:</strong> POST</li>
+            <li><strong>Dados da requisição (BODY):</strong></li>
+            <ul>
+                <li>date &rarr; string</li>
+                <li>description &rarr; string</li>
+                <li>priority &rarr; string</li>
+            </ul>
+        </ul>
+
+        <hr>
+
+        <h3>Obtendo uma tarefa:</h3>
+        <ul>
+            <li><strong>URL da requisição:</strong> http://phpapi.localhost/api/<strong>num</strong>/</li>
+            <dd><strong>num &rarr; integer</strong> é o ID da tarefa.</dd>
+            <li><strong>Método da requisição:</strong> GET</li>
+        </ul>
+
+        <hr>
+
+        <h3>Obtendo a lista de tarefas:</h3>
+        <ul>
+            <li><strong>Método da requisição:</strong> GET</li>
+            <li><strong>URL da requisição:</strong> http://phpapi.localhost/api/</li>
+            <dd>por default, ordena pela data (date) crescente (ASC).</dd>
+            &nbsp;
+            <li><strong>URL da requisição:</strong> http://phpapi.localhost/api/<strong>field</strong>/</li>
+            <dd><strong>field &rarr; string</strong> é o campo usado para ordenar ('task', 'date', 'description' ou
+                'priority')</dd>
+            &nbsp;
+            <li><strong>URL da requisição:</strong>
+                http://phpapi.localhost/api/<strong>field</strong>/<strong>direction</strong>/</li>
+            <dd><strong>field &rarr; string</strong> é o campo usado para ordenar ('task', 'date', 'description' ou
+                'priority')</dd>
+            <dd><strong>direction &rarr; string</strong> é a direção do ordenamento ('asc' ou 'desc')</dd>
+        </ul>
+
+        <hr>
+
+        <h3>Editando uma tarefa:</h3>
+        <ul>
+            <li><strong>URL da requisição:</strong> http://phpapi.localhost/api/</li>
+            <li><strong>Método da requisição:</strong> PUT</li>
+            <li><strong>Dados da requisição (BODY):</strong></li>
+            <ul>
+                <li>id &rarr; integer (obrigatório)</li>
+                <li>date &rarr; string</li>
+                <li>description &rarr; string</li>
+                <li>priority &rarr; string</li>
+            </ul>
+            <dd>Não é necessário alterar / enviar todos os campos.</dd>
+        </ul>
+
+        <hr>
+
+        <h3>Apagando uma tarefa:</h3>
+        <ul>
+            <li><strong>Requisição:</strong> http://phpapi.localhost/api/<strong>num</strong>/</li>
+            <dd><strong>num &rarr; integer</strong> é o id da tarefa.</dd>
+            <li><strong>Método da requisição:</strong> DELETE</li>
+        </ul>
+
+        <em>EOF</em>
+
+    </div>
+
+</body>
+
+</html>
