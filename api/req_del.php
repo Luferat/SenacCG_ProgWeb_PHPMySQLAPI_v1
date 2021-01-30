@@ -15,7 +15,7 @@ if ($id > 0) {
     if ($res->num_rows == 1) {
 
         // Atualiza 'status' da tarefa
-        $sql = "UPDATE `todo_list` SET `status` = 'inativo' WHERE `id` = '{$id}';";
+        $sql = "UPDATE todo_list SET status = 'inativo' WHERE id = '{$id}';";
         $res = $conn->query($sql);
 
         // Feedback

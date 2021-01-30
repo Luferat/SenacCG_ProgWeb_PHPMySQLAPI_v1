@@ -14,7 +14,7 @@ $id = isset($_PUT['id']) ? intval($_PUT['id']) : 0;
 if ($id > 0) {
 
     // Testa se o registro existe
-    $sql = "SELECT id FROM `todo_list` WHERE id = '{$id}' AND status = 'ativo'";
+    $sql = "SELECT id FROM todo_list WHERE id = '{$id}' AND status = 'ativo'";
     $res = $conn->query($sql);
     if ($res->num_rows == 1) {
 
